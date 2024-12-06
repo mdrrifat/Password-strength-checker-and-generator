@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PyScript 2024.11.1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.py" />
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2024.11.1/pyscript.css"
+    />
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2024.11.1/pyscript.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Advanced Password Tool</h1>
+
+      <!-- Password Strength Section -->
+      <h2>1. Check Password Strength</h2>
+      <input type="text" id="password-check" placeholder="Enter a password" />
+      <button onclick="check_password_strength()">Check Strength</button>
+      <div id="output" class="output-area"></div>
+      <button class="copy-button" onclick="copyToClipboard('output')">
+        Copy Result
+      </button>
+
+      <!-- Password Generator Section -->
+      <h2>2. Generate Custom Password</h2>
+      <label for="length">Password Length:</label>
+      <input type="number" id="length" min="8" value="16" />
+      <br />
+      <label
+        ><input type="checkbox" id="include-upper" checked /> Include
+        Uppercase</label
+      >
+      <label
+        ><input type="checkbox" id="include-lower" checked /> Include
+        Lowercase</label
+      >
+      <label
+        ><input type="checkbox" id="include-digits" checked /> Include
+        Digits</label
+      >
+      <label
+        ><input type="checkbox" id="include-special" checked /> Include Special
+        Characters</label
+      >
+      <br />
+      <button onclick="generate_password()">Generate Password</button>
+      <div id="generated_password" class="output-area"></div>
+    </div>
+
+    <script type="py" src="main.py" config="pyscript.json"></script>
+  </body>
+</html>
